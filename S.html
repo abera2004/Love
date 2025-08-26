@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Love ❤️</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Smooth auto-scrolling animation */
+    @keyframes scrollGallery {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-50%); }
+    }
+    .auto-scroll {
+      animation: scrollGallery 20s linear infinite;
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-pink-400 via-red-300 to-yellow-300 min-h-screen flex flex-col items-center justify-center font-sans">
+
+  <!-- Calendar Section -->
+  <section class="mt-12 flex flex-col items-center justify-center z-10 relative">
+    <div class="bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl p-6 flex flex-col items-center animate-bounce">
+        <div class="text-pink-600 font-bold text-2xl mb-2">August</div>
+        <div class="bg-pink-500 text-white font-extrabold text-6xl w-32 h-32 flex items-center justify-center rounded-2xl shadow-lg">
+        30
+        </div>
+        <p class="mt-4 text-gray-700 text-center text-lg md:text-xl">
+        Happy Birthday My Love! 🎉💖
+        </p>
+    </div>
+  </section>
+
+  <!-- Hero Section -->
+  <section class="text-center p-6">
+    <h1 class="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg animate-bounce">
+      🎉 Happy Birthday My Love ❤️
+    </h1>
+    <p class="mt-4 text-lg md:text-2xl text-white italic">
+      "You are the most beautiful part of my life 💕"
+    </p>
+  </section>
+
+  <!-- Main Content: Carousel + Gallery -->
+  <div class="flex w-full max-w-6xl">
+    
+    <!-- Photo Memories Carousel -->
+    <section class="mt-10 flex justify-center p-4 w-2/3">
+      <div class="relative h-[400px] w-[650px] overflow-hidden rounded-2xl shadow-2xl">
+        <div id="carousel" class="flex transition-transform duration-700 ease-in-out">
+          <img src="assets/memories/memory1.jpeg" alt="Memory 1" class="h-[650px] w-[650px] object-cover flex-shrink-0">
+          <img src="assets/memories/memory2.jpeg" alt="Memory 2" class="h-[650px] w-[650px] object-cover flex-shrink-0">
+          <img src="assets/memories/memory3.jpeg" alt="Memory 3" class="h-[650px] w-[650px] object-cover flex-shrink-0">
+        </div>
+      </div>
+    </section>
+
+    <!-- Auto-scrolling Gallery -->
+    <aside class="mt-10 w-1/3 h-[400px] overflow-hidden p-2">
+      <div id="gallery" class="auto-scroll grid grid-cols-3 gap-2"></div>
+    </aside>
+
+  </div>
+
+  <!-- Gallery Images JS -->
+  <script>
+    const gallery = document.getElementById("gallery");
+    for (let i = 1; i <= 45; i++) {
+      const img = document.createElement("img");
+      img.src = `assets/photo/i${i}.jpeg`;
+      img.alt = `Gallery ${i}`;
+      img.className = "w-32 h-full object-cover rounded-xl cursor-pointer";
+      img.onclick = () => openModal(img.src);
+      gallery.appendChild(img);
+    }
+  </script>
+
+  <!-- Carousel & Modal JS -->
+  <script>
+    const carousel = document.getElementById("carousel");
+    let index = 0;
+    const slides = carousel.children.length;
+    setInterval(() => {
+      index = (index + 1) % slides;
+      carousel.style.transform = `translateX(-${index * 650}px)`; 
+    }, 3000);
+
+    function openModal(src) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImg");
+      modal.style.display = "flex";
+      modalImg.src = src;
+    }
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+
+    // Secret Message Button
+    function showSecret() {
+      const secret = document.getElementById("secretMsg");
+      secret.classList.remove("hidden");
+      secret.classList.add("animate-bounce");
+    }
+  </script>
+
+  <!-- Modal -->
+  <div id="imageModal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+    <span class="absolute top-6 right-8 text-white text-4xl cursor-pointer" onclick="closeModal()">&times;</span>
+    <img id="modalImg" class="max-h-[90%] max-w-[90%] rounded-2xl shadow-lg">
+  </div>
+
+<!-- Secret Message Section -->
+<div class="mt-8 w-11/12 md:w-2/3 flex flex-col items-center">
+  <button onclick="showSecret()" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-xl shadow-lg transition">
+    Secret Message
+  </button>
+
+  <!-- Steady Secret Message Box -->
+  <div id="secretMsg" class="mt-4 hidden bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl p-6 w-full max-h-96 overflow-y-auto text-pink-700 font-semibold text-lg">
+    <p>আজকের দিনে শুধু তোর চোখের মায়া চাই, তোর হাসির আলো চাই।</p>
+    <p>আমি জানি আমরা ঝগড়া করেছি, কিন্তু তোর প্রতি ভালোবাসা এমনভাবে আমার হৃদয়ে জ্বলে যে প্রতিটি ভুলও ম্লান মনে হয়।</p>
+    <p>প্রতিটি সকাল তোর স্বপ্নে শুরু করতে চাই, প্রতিটি রাত তোর মধুর স্মৃতিতে শেষ করতে চাই।</p>
+    <p>তুই না থাকলে আমার পৃথিবী নিঃশব্দ, তুই না থাকলে আমার হৃদয় খালি।</p>
+    <p>আমি চাই তুই জানিস, তোর হাসি আমার জীবনের সবচেয়ে বড় আশীর্বাদ, তোর কান্না আমার সবচেয়ে বড় যন্ত্রণার কারণ।</p>
+    <p>আমি চাই তুই বুঝিস, তোর সঙ্গে কাটানো প্রতিটি মুহূর্ত আমার জীবনের সব থেকে মূল্যবান।</p>
+    <p>আমি চাই তুই ফিরে দেখিস আমাদের স্মৃতিগুলো, প্রতিটি হাসি, প্রতিটি ছোঁয়া, প্রতিটি কথা — সবই আমার হৃদয়ে অম্লান।</p>
+    <p>আজকের এই বিশেষ দিনে, শুধু চাই তুই ফিরিস, শুধু চাই তোর হাতে আমার হাত রাখিস।</p>
+    <p>আমি জানি আমি ভুল করেছি, আমি জানি তুই আহত। কিন্তু তুই ছাড়া আমার জীবন অসম্পূর্ণ।</p>
+    <p>আজ, জন্মদিনে, আমার হৃদয়ের গভীর থেকে শুধু বলতে চাই — তুই আমার সব, আমার জীবন, আমার স্বপ্ন, আমার আশা, আমার ভালোবাসার শেষ ঠিকানা।</p>
+    <p>আমি অপেক্ষা করব, তোর প্রতিটা চোখের আলো ফিরিয়ে পাওয়ার জন্য, তোর প্রতিটা হাসি ফেরানোর জন্য।</p>
+    <p>তুই ফিরে আসলে, আমার জীবন পূর্ণ হবে, আর যদি না আসিস, তবুও তোর ভালোবাসা চিরকাল আমার হৃদয়ে থাকবে। 💖</p>
+  </div>
+</div>
+
+<script>
+  function showSecret() {
+    const secret = document.getElementById("secretMsg");
+    secret.classList.remove("hidden"); // show box
+  }
+</script>
+
+  <!-- Love Quotes -->
+  <section class="mt-6 bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl p-8 w-11/12 md:w-2/3 text-center">
+    <h2 class="text-3xl font-bold text-pink-600">💕 My Promise & Love 💕</h2>
+    <p class="mt-4 text-lg text-gray-700">
+      "Every moment with you is a memory I treasure.  
+      You are my happiness, my dream, and my forever.  
+      On your special day, I just want to say –  
+      I love you more than words can ever express ❤️"
+    </p>
+    <div class="mt-6 text-xl text-pink-700 font-semibold">
+      <p>💖 "তুমি আছ বলেই জীবনটা এত সুন্দর মনে হয়।"</p>
+      <p>💖 "তুমি পাশে থাকলেই পৃথিবীটা যেন নতুন লাগে।"</p>
+      <p>💖 "আমার সমস্ত স্বপ্ন, আশা আর ভালোবাসা কেবল তোমাকেই ঘিরে।"</p>
+      <p>💖 "তুমি আমার হৃদয়ের সবচেয়ে মিষ্টি গান।"</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-12 text-white text-center p-4">
+    <p class="text-lg">Made with ❤️ by <span class="font-bold">Your Ani..</span></p>
+    <p class="italic">Forever Yours 💍</p>
+  </footer>
+</body>
+</html>
